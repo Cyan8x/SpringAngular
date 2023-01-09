@@ -1,0 +1,52 @@
+package com.mitocode.collections.list;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.mitocode.collections.list.entities.Employee;
+
+public class Program {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		List<Employee> employees = new ArrayList<>();
+		System.out.println("How many emplyees will be registered?");
+		int n = sc.nextInt();
+		
+		for (int i = 0; i < n; i++) {
+			System.out.println();
+			System.out.println("Employee #" + (i+1) + ":");
+			System.out.println("Id:");
+			Integer id = sc.nextInt();
+			
+			while(hasId(employees,id)) {
+				System.out.println("Id already exists. Try again.");
+				id = sc.nextInt();
+			}
+			
+			System.out.println("Name:");
+			sc.nextLine();
+			String name = sc.nextLine();
+			System.out.println("Salary:");
+			Double salary = sc.nextDouble();
+			
+			Employee employee = new Employee(id,name,salary);
+			
+			employees.add(employee);
+		}
+		
+		//COLECCIONES => 35:40
+		
+	}
+	
+	public static boolean hasId(List<Employee> employees, int id) {
+		Employee employee = employees
+									.stream()
+									.filter(emp->emp.getId()==id)
+									.findFirst()
+									.orElse(null);
+		
+		return employee != null;
+	}
+}

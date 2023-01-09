@@ -1,0 +1,9 @@
+package com.mitocode.collections.list.entities;
+
+public class Employee {
+	private Integer id;
+	private String nombre;
+	private Double salary;
+	
+	
+}
