@@ -2,7 +2,6 @@ package com.mitocode.collections.list;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 
 import com.mitocode.collections.list.entities.Employee;
@@ -37,36 +36,7 @@ public class Program {
 			employees.add(employee);
 		}
 		
-		System.out.println();
-		System.out.println("Enter the id of the employee that the salary increase:");
-		Integer idSalary = sc.nextInt();
-		
-//		Optional<Employee> employeeSalary  = employees.stream().filter(emp->emp.getId()==idSalary).findFirst();
-//		
-//		if (employeeSalary.isPresent()) {
-//			System.out.println("The id does not exist.");
-//		}else {
-//			System.out.println("Enter the percentage:");
-//			double percentage = sc.nextDouble();
-//			employeeSalary.get().increaseSalary(percentage);
-//		}
-		
-		Employee employeeSalary = employees.stream().filter(emp->emp.getId()==idSalary).findFirst().orElse(null);
-		
-		if (employeeSalary == null) {
-			System.out.println("The id does not exist.");
-		}else {
-			System.out.println("Enter the percentage:");
-			double percentage = sc.nextDouble();
-			employeeSalary.increaseSalary(percentage);
-		}
-		
-		System.out.println();
-		System.out.println("List of Employees:");
-		for (Employee employee : employees) {
-			System.out.println(employee);
-		}
-		
+		//COLECCIONES => 35:40
 		
 	}
 	

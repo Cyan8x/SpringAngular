@@ -39,10 +39,6 @@ public class Employee {
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
-	
-	public void increaseSalary(double percentage) {
-		this.salary += this.salary*percentage/100.0;
-	}
 
 	@Override
 	public String toString() {
